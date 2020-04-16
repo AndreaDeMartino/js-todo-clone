@@ -15,6 +15,14 @@
   color: rgb(15, 146, 15);
 }
 
+.active-item{
+  display: flex;
+}
+
+.hide-item{
+  display: none;
+}
+
 /* App */
 
 #app{
