@@ -2,25 +2,94 @@
 
 
 /* Utility */
-.box{
-  height: 40px;
-  width: 40px;
-}
-
-.red{
-background: red;
-}
-
-.blue{
-background: blue;
-}
-
-.yellow{
-background: yellow;
-}
-
-.green{
-background: green;
-}
 
 /* App */
+
+#app{
+  display: flex;
+  background: #222f3e;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 30%;
+  height: 100vh;
+  background: #eee
+}
+
+.sidebar-wrapper{
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+.sidebar-cta>i{
+  color: #ccc;
+  padding-right: 3px;
+}
+
+.sidebar-search>.search{
+  width: 100%;
+  background: #ccc;
+  opacity: 0.5;
+  border: 0;
+  padding: 5px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.sidebar-search>.search:hover,
+.sidebar-search>.search:focus{
+  opacity: 0.8;
+}
+
+
+/* Main Content */
+.main-content{
+  flex-grow: 1;
+  background: #fff;
+}
+
+.content-wrapper{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 15px;
+  justify-content: space-between;
+}
+/* Main Content: Header */
+.content-header{
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title>h1{
+  color: #F9A35C;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.plus-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 0 15px;
+  color: #777;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(160, 153, 153, 0.3);
+  box-shadow: 0 0 5px rgba(68, 68, 68, 0.3);
+  
+}
+
+/* Main Content: TODO LIST */
+.todo-list{
+  flex-grow: 1;
+  background: #eee;
+}
