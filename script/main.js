@@ -3,17 +3,13 @@ $(document).ready(function () {
   // General Variables
   var list = $('.items');
 
-  // Click Button Add
-  // addButton.click(function () {
-  //   addElement();
-  // })
-
+  // Add element with button
   $('#app').on('click', '.plus-button', function(){
     addElement();
     
   })
 
-  // Invio su InputBox
+  // Add element with keyboard
   $('#app').on('keyup', '.add-item', function(e){
     
     if (e.which == 13){
@@ -23,7 +19,7 @@ $(document).ready(function () {
     }
   })
 
-  // Funzione ADD Element
+  // Add Element Function
   function addElement() {
     // Clono struttura template li
     var item = $('.template li').clone();
@@ -44,7 +40,7 @@ $(document).ready(function () {
     }
   }
 
-  // Gestione Selezione item
+  // Selection items logic
   $('#app').on('click','.item i', function(){
     console.log('Click Icon');
     var icon = $(this);
@@ -55,7 +51,7 @@ $(document).ready(function () {
     }
   })
 
-  // Cancellazione Item
+  // Remove Item
   $('#app').on('click','.delete-button', function(){
     console.log('delete');
     $('.fas').parent('li').remove();
