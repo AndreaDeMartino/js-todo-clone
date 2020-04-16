@@ -1,11 +1,7 @@
-/* General Rules */
-
-
-/* Utility */
-
 /* App */
 
 #app{
+  width: 100vw;
   display: flex;
   background: #222f3e;
 }
@@ -14,21 +10,35 @@
 .sidebar{
   width: 30%;
   height: 100vh;
-  background: #eee
+  background: #eee;
 }
 
 .sidebar-wrapper{
   width: 95%;
+  height: 100%;
   margin: 0 auto;
   padding-top: 5px;
 }
 
+/* Sidebar: Header */
 .sidebar-cta>i{
   color: #ccc;
   padding-right: 3px;
 }
 
-.sidebar-search>.search{
+.sidebar-cta>i:nth-child(1){
+  color: rgb(212, 54, 54);
+}
+
+.sidebar-cta>i:nth-child(2){
+  color: rgb(196, 166, 67);
+}
+
+.sidebar-cta>i:nth-child(3){
+  color: rgb(92, 187, 92);
+}
+
+.sidebar-add-item>.add-item{
   width: 100%;
   background: #ccc;
   opacity: 0.5;
@@ -36,11 +46,17 @@
   padding: 5px;
   border-radius: 3px;
   outline: none;
+  transition: opacity 0.3s;
 }
 
-.sidebar-search>.search:hover,
-.sidebar-search>.search:focus{
+.sidebar-add-item>.add-item:hover,
+.sidebar-add-item>.add-item:focus{
   opacity: 0.8;
+}
+
+/* Sidebar: Nav */
+.main-nav{
+  height: 100%;
 }
 
 
@@ -62,6 +78,7 @@
 /* Main Content: Header */
 .content-header{
   height: 10%;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,11 +90,15 @@
   font-size: 2em;
 }
 
-.plus-button{
+.buttons{
+  display: flex;
+}
+
+.button{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: 300;
   padding: 0 15px;
   color: #777;
@@ -85,11 +106,44 @@
   border-radius: 5px;
   border: 1px solid rgba(160, 153, 153, 0.3);
   box-shadow: 0 0 5px rgba(68, 68, 68, 0.3);
-  
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.button:hover,
+.button:focus{
+  opacity: 1;
+  color: black;
 }
 
 /* Main Content: TODO LIST */
 .todo-list{
   flex-grow: 1;
-  background: #eee;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  color: #444;
+  font-size: 0.8rem;
+  padding: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item:last-child{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item > i{
+  font-size: 1rem;
+  color: #ccc;
+  padding-right: 10px;
+}
+
+.item > i:hover{
+  color: #F9A35C;
+}
+
+.template{
+  display: none;
 }

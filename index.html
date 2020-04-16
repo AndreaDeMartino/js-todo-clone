@@ -18,6 +18,8 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-wrapper">
+
+        <!-- SIDEBAR: HEADER -->
         <header class="sidebar-header">
           <div class="sidebar-cta">
             <i class="fas fa-circle"></i>
@@ -25,13 +27,17 @@
             <i class="fas fa-circle"></i>
           </div>
           
-          <div class="sidebar-search u-padtop-s">
-            <input class="search u-text-center" type="text" placeholder="Search Here">
+          <div class="sidebar-add-item u-padtop-s">
+            <input class="add-item u-text-center" type="text" placeholder="Add a New Reminder Here">
           </div>
         </header>
-      </div>
-      
 
+        <!-- SIDEBAR: NAV -->
+        <nav class="main-nav u-flex-center">
+          <!-- Nav Here -->
+        </nav>
+
+      </div>
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -45,33 +51,32 @@
             <h1>Personal To Do</h1>
           </div>
 
-          <span class="plus-button">+</span>
-
+          <div class="buttons">
+            <span class="button plus-button u-mgrx-xs">+</span>
+            <span class="button delete-button">-</span>
+          </div>
+          
         </header>
            
-        <!-- MAIN CONTENT TODO LIST -->
-        <section class="todo-list u-mgtop-xs">
-          TODO LIST HERE
-
+        <!-- MAIN CONTENT: TODO LIST -->
+        <section class="todo-list u-mgtop-md">
+          
+          <ul class="items u-vanilla-list">
+            <li class="item"><i class="far fa-circle"></i>Order tables and chairs</li>
+            <li class="item"><i class="far fa-circle"></i>Pick up bagels ot</li>
+            <li class="item"><i class="far fa-circle"></i>Take a chicken out for dinner</li>
+            <li class="item"><i class="far fa-circle"></i>Check the INPS website </li>
+          </ul>
+          <!--TODO LIST: TEMPLATE  -->
+          <div class="template">
+            <li class="item"><i class="far fa-circle"></i></li>
+          </div>
         </section>
 
       </div>
     </main>
 
-
-
-
-
-
-
-
   </div>
-
-
-
-
-
-
 
   <!-- jQuery -->
   <script 
