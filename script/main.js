@@ -14,15 +14,7 @@ $(document).ready(function () {
   // Add element with button
   $('#app').on('click', '.plus-button', function(){
     addElement();
-    hobbyItems = $('.hobby-content li').length;
-    $('.hobby h5').text(hobbyItems);
-    personalItems = $('.personal-content li').length;
-    $('.personal h5').text(personalItems);
-    codingItems = $('.coding-content li').length;
-    $('.coding h5').text(codingItems);
-    editingItems = $('.editing-content li').length;
-    $('.editing h5').text(editingItems);
-    
+    refreshIndex();
   })
 
   // Add element with keyboard
@@ -30,16 +22,8 @@ $(document).ready(function () {
     
     if (e.which == 13){
       console.log('Premuto Invio su Input');
-      
       addElement();
-      hobbyItems = $('.hobby-content li').length;
-      $('.hobby h5').text(hobbyItems);
-      personalItems = $('.personal-content li').length;
-      $('.personal h5').text(personalItems);
-      codingItems = $('.coding-content li').length;
-      $('.coding h5').text(codingItems);
-      editingItems = $('.editing-content li').length;
-      $('.editing h5').text(editingItems);
+      refreshIndex();
     }
   })
 
@@ -55,10 +39,8 @@ $(document).ready(function () {
     } else{
       // Aggiungo valore inputbox a clone
       item.append(itemValue);
-
       // Inserisco il tutto in lista
       list.append(item);
-
       // Svuoto InputBox
       $('.add-item').val('');
     }
@@ -79,6 +61,40 @@ $(document).ready(function () {
   $('#app').on('click','.delete-button', function(){
     console.log('delete');
     $('.fas').parent('li').remove();
+    refreshIndex();
+  })
+});
+
+// Sidebar
+
+  // Add element with button
+  $('#app').on('click', '.personal', function(){
+    console.log('personal click');
+    refreshOnClick(($('.personal-content')),'Personal To Do','#FC9400')
+  })
+
+  $('#app').on('click', '.hobby', function(){
+    console.log('hobby click');
+    refreshOnClick(($('.hobby-content')),'My Hobby','rgb(15, 146, 15)')
+  })
+
+  $('#app').on('click', '.coding', function(){
+    console.log('coding click');
+    refreshOnClick(($('.coding-content')),'Coding Snippets','#0974FF')
+  })
+
+  $('#app').on('click', '.editing', function(){
+    console.log('editing click');
+    refreshOnClick(($('.editing-content')),'Editing Projects','red')
+  })
+
+  function refreshOnClick(category,text,color){
+    $('.title h1').css('color',color).text(text);
+    $('.todo-list .items').addClass('hide-item');
+    $(category).removeClass('hide-item');
+  }
+
+  function refreshIndex(){
     hobbyItems = $('.hobby-content li').length;
     $('.hobby h5').text(hobbyItems);
     personalItems = $('.personal-content li').length;
@@ -87,37 +103,4 @@ $(document).ready(function () {
     $('.coding h5').text(codingItems);
     editingItems = $('.editing-content li').length;
     $('.editing h5').text(editingItems);
-  })
-
-});
-
-// Sidebar
-
-  // Add element with button
-  $('#app').on('click', '.hobby', function(){
-    console.log('hobby click');
-    $('.title h1').css('color','rgb(15, 146, 15)').text('My Hobby')
-    $('.todo-list .items').addClass('hide-item');
-    $('.hobby-content').removeClass('hide-item');
-  })
-
-  $('#app').on('click', '.coding', function(){
-    console.log('coding click');
-    $('.title h1').css('color','#0974FF').text('Coding Snippets');
-    $('.todo-list .items').addClass('hide-item');
-    $('.coding-content').removeClass('hide-item');
-  })
-
-  $('#app').on('click', '.editing', function(){
-    console.log('editing click');
-    $('.title h1').css('color','red').text('Editing Projects');
-    $('.todo-list .items').addClass('hide-item');
-    $('.editing-content').removeClass('hide-item');
-  })
-
-  $('#app').on('click', '.personal', function(){
-    console.log('personal click');
-    $('.title h1').css('color','#FC9400').text('Personal To Do');
-    $('.todo-list .items').addClass('hide-item');
-    $('.personal-content').removeClass('hide-item');
-  })
+  }
